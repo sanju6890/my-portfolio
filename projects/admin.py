@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Project, Skill, Experience
 
 # Header & Title Customization
-admin.site.site_title = "Admin-Interface"
-admin.site.site_header = "Sanjay Kumar's Portfolio Admin Interface"
+admin.site.site_title = "Sanjay-Portfolio"
+admin.site.site_header = "Sanjay Kumar's Portfolio"
 
 # To Show the data in  tabular format on the admin-site
 class ProjectAdmin(admin.ModelAdmin):
