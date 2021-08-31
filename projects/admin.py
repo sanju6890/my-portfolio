@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Project, Skill, Experience
+from django.contrib.auth.models import User, Group
 
 # Header & Title Customization
 admin.site.site_title = "Sanjay-Portfolio"
@@ -19,3 +20,7 @@ class ExperienceAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Skill, SkillAdmin)
 admin.site.register(Experience, ExperienceAdmin)
+
+# Unregister your models here.
+admin.site.unregister(User)
+admin.site.unregister(Group)
