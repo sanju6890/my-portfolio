@@ -39,7 +39,7 @@
         {% for skill in skills.all %}
         <div class="col-md-3">
           <div class="card mb-2 box-shadow">
-            <div class="card-body" style="text-align: center;background-color: lightblue;">
+            <div class="card-body" style="text-align: center;background-color: lightsteelblue;">
               <h6 class="card-text">{{ skill.skill }}</h6>
               <p class="card-text">{{ skill.level }}</p>
             </div>
@@ -59,7 +59,7 @@
         {% for exp in experiences.all %}
         <div class="col-md-4">
           <div class="card mb-3 box-shadow">
-            <div class="card-body" style="text-align: center; background-color:lightsteelblue;">
+            <div class="card-body" style="text-align: center; background-color:lightblue;">
               <h5 class="card-text">{{ exp.title }}</h5>
               <h6 class="card-text">{{ exp.company }}</h6>
               <p class="card-text">({{ exp.type }})</p>
@@ -82,7 +82,7 @@
         <div class="col-md-4" >
           <a href="{{project.url}}">
           <div class="card mb-3 box-shadow">
-            <img class="card-img-top" src="{{ project.image.url }}">
+            <img class="card-img-top" src="{{ project.image }}">
             <div class="card-body" style="text-align: center;">
               <h5 class="card-text">{{ project.title }}</h5>
               <p class="card-text">{{ project.summary }}</p>

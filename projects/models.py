@@ -5,7 +5,7 @@ class Project(models.Model):
     image = models.ImageField()
     title = models.CharField(max_length=100)
     summary = models.CharField(max_length=200)
-    url = models.CharField(max_length=500)
+    url = models.URLField()
 
 class Skill(models.Model):
     skill = models.CharField(max_length=100)
