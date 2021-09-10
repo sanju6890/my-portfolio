@@ -34,12 +34,12 @@
   <!-- SKILLS SECTION -->
   <div class="album py-5">
     <div class="container">
-      <h2>Tech Skills</h2>
+      <h2>✔ Tech Skills</h2>
       <div class="row">
         {% for skill in skills.all %}
-        <div class="col-md-3">
-          <div class="card mb-2 box-shadow">
-            <div class="card-body" style="text-align: center;background-color: lightsteelblue;">
+        <div class="col-md-4">
+          <div class="card mb-3 box-shadow">
+            <div class="card-body" style="text-align: center; background-color:cornflowerblue;">
               <h6 class="card-text">{{ skill.skill }}</h6>
               <p class="card-text">{{ skill.level }}</p>
             </div>
@@ -54,7 +54,7 @@
   <!-- EXPERIENCE SECTION -->
   <div class="album py-5 bg-light">
     <div class="container">
-      <h2>Experience</h2>
+      <h2>✨ Experience</h2>
       <div class="row">
         {% for exp in experiences.all %}
         <div class="col-md-4">
@@ -76,15 +76,13 @@
   <!-- PROJECTS SECTION -->
   <div class="album py-5">
     <div class="container">
-      <h3>Projects</h3>
+      <h3>💡 Projects</h3>
       <div class="row">
         {% for project in projects.all %}
         <div class="col-md-4" >
-          <a href="{{project.url}}">
           <div class="card mb-3 box-shadow">
-            <img class="card-img-top" src="{{ project.image.url }}">
-            <div class="card-body" style="text-align: center;">
-              <h5 class="card-text">{{ project.title }}</h5>
+            <div class="card-body" style="text-align: center; background-color: lightsteelblue;">
+              <a href="{{project.url}}"><h5 class="card-text">{{ project.title }}</h5></a>
               <p class="card-text">{{ project.summary }}</p>
             </div>
           </div>
