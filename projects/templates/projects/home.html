@@ -1,115 +1,114 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="../../../../favicon.ico">
-    <title>Sanjay Kumar</title>   
-
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-
+  <title>Sanjay Kumar's Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+  </style>
 </head>
+<body class="w3-light-grey">
 
-<body>
-<main role="main">
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <div class="jumbotron-heading">
-        <img src="{% static 'sanjay.jpeg' %}" height="250" width="200" style="padding-bottom: 5px;"></img>
-        <h1 class="fw-light">Sanjay Kumar</h1>
-        <p class="lead text-muted" style="text-align: center;">👋 Hi folks! I am Sanjay who loves to explore and learn new technologies. Presently, 
-        I am pursuing B.Tech in Electronics and Communication Engineering from NIT, Jalandhar. I enjoy programming and technical writing.</p>
-        <p>
-          <a href="https://www.linkedin.com/in/sanjaykumar086/" class="btn btn-primary my-2">LinkedIn</a>
-          <a href="https://twitter.com/Sanjay6890/" class="btn btn-secondary my-2">Twitter</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- The Grid -->
+  <div class="w3-row-padding">
 
-  <!-- SKILLS SECTION -->
-  <div class="album py-5">
-    <div class="container">
-      <h2>✔ Tech Skills</h2>
-      <div class="row">
-        {% for skill in skills.all %}
-        <div class="col-md-4">
-          <div class="card mb-3 box-shadow">
-            <div class="card-body" style="text-align: center; background-color:cornflowerblue;">
-              <h6 class="card-text">{{ skill.skill }}</h6>
-              <p class="card-text">{{ skill.level }}</p>
-            </div>
-          </div>
+    <!-- Right Column -->
+    <div class="w3-one">
+
+      <!-- Introduction & Photo -->
+      <div class="w3-container w3-margin-bottom">
+        <div class="w3-container" style="text-align: center;">
+          <img src="{% static 'sanjay.jpeg' %}" style=" border: 7px solid teal;border-radius:4px;display:block;width:20%;margin-left:auto;margin-right:auto;margin-top: 10px;"></img>
+          <h2 class="w3-text-grey w3-padding-5">Sanjay Kumar</h2>
+          <h6 class="w3-text-grey w3-padding-16">👋 Hi folks! I am Sanjay who loves to explore and learn new technologies. Presently, 
+          I am pursuing B.Tech in Electronics and Communication Engineering from NIT, Jalandhar. I enjoy programming and technical writing.</h6>
         </div>
-        {% endfor %}
       </div>
 
+      <!-- Education -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Dr B R Ambedkar National Institute of Technology, Jalandhar (Punjab)</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - 2023</h6>
+          <p>Bachelor Degree</p>
+          <p>Electronics and Communication Engineering (Major) & Computer Science and Engineering (Minor)</p>
+          <p>Grade: 8.15/10</p>
+        </div>
+        <hr/>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Sainik School, Kapurthala (Punjab)</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2016 - 2018</h6>
+          <p>Senior Secondary</p>
+          <p>Physics, Chemistry, Mathematics, & Computer Science</p>
+          <p>Grade: 94% (Aggregate) & 95% (PCMC)</p><br>
+        </div>
+      </div>
+      <hr/>
+
+      <!-- Skills -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Technical Skills</h2>
+        <div class="w3-container">
+          {% for skill in skills.all %}
+          <h5 class="w3-opacity"><b>{{ skill.skill }}</b> ({{ skill.level }})</h5>
+          <hr>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experience</h2>
+        <div class="w3-container">
+          {% for exp in experiences.all %}
+            <h5 class="w3-opacity"><b>{{ exp.title }}</b> ({{ exp.type }})</h5>
+            <h6 class="w3-opacity">{{ exp.company }}</h6>
+            <p class="w3-text-teal">{{ exp.summary }}</p>
+            <hr>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i></i>Projects</h2>
+        
+        <div class="w3-container">
+          {% for project in projects.all %}
+            <h5 class="w3-opacity"><b><a href="{{project.url}}">{{ project.title }}</a></b> ({{ project.framework }})</h5>
+            <p class="w3-text-teal">{{ project.summary }}</p>
+            <hr>
+          {% endfor %}
+        </div>
+        
+      </div>
+    
     </div>
+    
+  <!-- End Grid -->
   </div>
   
-  <!-- EXPERIENCE SECTION -->
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <h2>✨ Experience</h2>
-      <div class="row">
-        {% for exp in experiences.all %}
-        <div class="col-md-4">
-          <div class="card mb-3 box-shadow">
-            <div class="card-body" style="text-align: center; background-color:lightblue;">
-              <h5 class="card-text">{{ exp.title }}</h5>
-              <h6 class="card-text">{{ exp.company }}</h6>
-              <p class="card-text">({{ exp.type }})</p>
-              <p class="card-text">{{ exp.summary }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+  <!-- End Page Container -->
+</div>
 
-    </div>
-  </div>
-
-  <!-- PROJECTS SECTION -->
-  <div class="album py-5">
-    <div class="container">
-      <h3>💡 Projects</h3>
-      <div class="row">
-        {% for project in projects.all %}
-        <div class="col-md-4" >
-          <div class="card mb-3 box-shadow">
-            <div class="card-body" style="text-align: center; background-color: lightsteelblue;">
-              <a href="{{project.url}}"><h5 class="card-text">{{ project.title }}</h5></a>
-              <h6 class="card-text">({{ project.framework }})</h6>
-              <p class="card-text">{{ project.summary }}</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        {% endfor %}
-      </div>
-
-    </div>
-  </div>
-
-</main>
-    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script> 
-
-    <footer class="text-muted py-5 bg-dark" style="text-align: center;">
-        <div class="container">
-          <p class="float-end mb-1">
-            <a href="#">Back to top</a>
-          </p>
-          <p class="mb-1">Sanjay Kumar &copy; 2021</p>
-          <p class="mb-0">Contact Me: <a href="mailto:itworld.6890@gmail.com"<a>itworld.6890@gmail.com</a>
-        </div>
-    </footer>
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Connect with me on social media.</p>
+  <a href="https://www.linkedin.com/in/sanjaykumar086/"><i class="fa fa-linkedin w3-hover-opacity">&ThickSpace;</i></a>
+  <a href="https://twitter.com/Sanjay6890/"><i class="fa fa-twitter w3-hover-opacity"></i></a>  
+  <p>SANJAY KUMAR &copy; 2021</p>
+  <small>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></small>
+</footer>
 
 </body>
 
 </html>
-
