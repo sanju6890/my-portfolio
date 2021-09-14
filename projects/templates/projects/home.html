@@ -26,10 +26,12 @@
       <!-- Introduction & Photo -->
       <div class="w3-container w3-margin-bottom">
         <div class="w3-container" style="text-align: center;">
-          <img src="{% static 'sanjay.jpeg' %}" style=" border: 7px solid teal;border-radius:4px;display:block;width:20%;margin-left:auto;margin-right:auto;margin-top: 10px;"></img>
-          <h2 class="w3-text-grey w3-padding-5">Sanjay Kumar</h2>
-          <h6 class="w3-text-grey w3-padding-16">👋 Hi folks! I am Sanjay who loves to explore and learn new technologies. Presently, 
-          I am pursuing B.Tech in Electronics and Communication Engineering from NIT, Jalandhar. I enjoy programming and technical writing.</h6>
+          <img src="{% static 'sanjay.jpeg' %}" style=" border: 5px solid grey;border-radius:4px;display:block;width:25%;margin-left:auto;margin-right:auto;margin-top: 10px;"></img>
+          <h1 class="w3-text-teal w3-padding-5">Sanjay Kumar</h1>
+          {% for about in about.all %}
+            <h5 class="w3-text-grey w3-padding-16">{{ about.summary }}</h5>
+          {% endfor %}
+          
         </div>
       </div>
 
@@ -38,22 +40,16 @@
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
 
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Dr B R Ambedkar National Institute of Technology, Jalandhar (Punjab)</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - 2023</h6>
-          <p>Bachelor Degree</p>
-          <p>Electronics and Communication Engineering (Major) & Computer Science and Engineering (Minor)</p>
-          <p>Grade: 8.15/10</p>
-        </div>
-        <hr/>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Sainik School, Kapurthala (Punjab)</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2016 - 2018</h6>
-          <p>Senior Secondary</p>
-          <p>Physics, Chemistry, Mathematics, & Computer Science</p>
-          <p>Grade: 94% (Aggregate) & 95% (PCMC)</p><br>
+          {% for edu in education.all %}
+            <h5 class="w3-opacity"><b>{{ edu.school_name }}</b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{edu.session}}</h6>
+            <p>{{ edu.degree }}</p>
+            <p>{{ edu.courses }}</p>
+            <p>Grade: {{ edu.grade }}</p>
+            <hr/>
+          {% endfor %}
         </div>
       </div>
-      <hr/>
 
       <!-- Skills -->
       <div class="w3-container w3-card w3-white w3-margin-bottom">
