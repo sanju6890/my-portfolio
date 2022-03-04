@@ -1,6 +1,6 @@
 
 # My Portfolio 
-This is my Portfolio website developed using Django framework which provides a detailed description of my technical skills, experiences, and the projects under taken by me.
+This is my Portfolio website developed using Django framework which provides a detailed description of my educational qualifications, technical skills, experiences, and the projects under taken by me.
 ## Features
 
 - Photograph
@@ -14,15 +14,15 @@ This is my Portfolio website developed using Django framework which provides a d
   
 ## Tech Stack
 
-- **Framework:** Django
 - **Frontend:** HTML, W3css
-- **Backend:** PostgreSQL
+- **Backend:** Django Framework
+- **Databases** SQLite, PostgreSQL
 
 ## Deployment
 This website has been deployed at Heroku (https://sanjay-kumar-portfolio.herokuapp.com).
 
 ## Author
 
-[Sanjay Kumar](https://github.com/sanju6890)
+[@Sanjay Kumar](https://github.com/sanju6890)
 
   
