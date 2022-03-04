@@ -4,26 +4,23 @@ This is my Portfolio website developed using Django framework which provides a d
 ## Features
 
 - Photograph
-- Social Links' Buttons
-- Tech Skills
+- Introduction 
+- Education 
+- Technical Skills
 - Experience
 - Projects
 - Admin-Interface to add or modify the website's data
 - Live @ https://sanjay-kumar-portfolio.herokuapp.com
-
   
 ## Tech Stack
 
 - **Framework:** Django
-- **Frontend:** HTML, Bootstrap
-- **Backend:** SQLite
+- **Frontend:** HTML, W3css
+- **Backend:** PostgreSQL
 
-
-  
 ## Deployment
 This website has been deployed at Heroku (https://sanjay-kumar-portfolio.herokuapp.com).
 
-  
 ## Author
 
 [Sanjay Kumar](https://github.com/sanju6890)
